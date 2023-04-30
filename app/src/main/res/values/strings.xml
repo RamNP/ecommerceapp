@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">E-commerce App</string>
+    <string name="skip">Skip</string>
+    <string name="tv_welcome">Welcome to e-commerce application</string>
+    <string name="tv_desc_first">An e-commerce application is a software platform that enables businesses to sell products and services online through a website or mobile app</string>
+    <string name="tv_desc_second">An e-commerce application is a software platform that enables businesses to sell products and services online through a website or mobile app</string>
+    <string name="tv_desc_third">An e-commerce application is a software platform that enables businesses to sell products and services online through a website or mobile app</string>
+    <string name="login">Login</string>
+</resources>

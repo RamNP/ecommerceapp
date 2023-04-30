@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bottom_background"
+    tools:context="com.ram.e_commerceapp.features.slider.IntroActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/rvIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="600dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Gray"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Back"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,RtlSymmetry">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Gray"
+        android:drawableEnd="@drawable/ic_arrow_forward"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Next"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,RtlSymmetry">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
