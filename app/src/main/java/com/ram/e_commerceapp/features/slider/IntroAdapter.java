@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.e_commerceapp.R;
+import com.ram.e_commerceapp.R;
 
 public class IntroAdapter extends PagerAdapter {
 

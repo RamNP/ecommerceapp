@@ -1,5 +1,9 @@
 package com.ram.e_commerceapp.features.post;
 
+import androidx.annotation.NonNull;
+
+import com.ram.e_commerceapp.features.post.helper.CategoriesPojo;
+import com.ram.e_commerceapp.features.post.helper.Result;
 import com.ram.e_commerceapp.features.post.helper.ResultList;
 
 
@@ -10,8 +14,10 @@ import retrofit2.Call;
 public interface CategoriesContract {
 
     interface View{
+        void setPost(@NonNull CategoriesPojo body);
+
         void showSuccessfulMessage(boolean show);
-         void setPosts(ResultList body);
+         void setPosts(CategoriesPojo body);
         void showErrorMessage(String error);
 
     }
@@ -24,7 +30,7 @@ public interface CategoriesContract {
 
     interface Model{
 
-        Call<ResultList> getPostsFromAPI(String sellerId);
+        Call<CategoriesPojo> getPostsFromAPI(String sellerId);
     }
 
 }

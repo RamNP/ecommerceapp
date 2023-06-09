@@ -2,6 +2,7 @@ package com.ram.e_commerceapp.features.post;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.e_commerceapp.R;
+import com.ram.e_commerceapp.R;
 import com.ram.e_commerceapp.features.post.helper.CategoryListItem;
+import com.ram.e_commerceapp.features.post.helper.ImagePojo;
 import com.ram.e_commerceapp.features.post.helper.ResultList;
 
 import java.util.List;
@@ -21,16 +23,20 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
 
     Context context;
     List<CategoryListItem> resultLists;
-
-    public CategoriesAdapter(Context context, List<CategoryListItem> resultLists) {
+    List<ImagePojo> imagePojosList;
+    public CategoriesAdapter(Context context, List<CategoryListItem> resultLists, List<ImagePojo> imagePojosList) {
         this.context = context;
         this.resultLists = resultLists;
+        this.imagePojosList = imagePojosList;
+        Log.d("adapterBug", "constructor call ");
+
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.categories_item, parent, false);
+        Log.d("adapterBug", "onCreateViewHolder call ");
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -38,9 +44,11 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull CategoriesAdapter.ViewHolder holder, int position) {
         CategoryListItem post = resultLists.get(position);
+        holder.ivImage.setImageResource(imagePojosList.get(position).getImage());
         holder.tvName.setText(post.getName());
         holder.tvId.setText(post.getId() + "");
-        Glide.with(holder.itemView.getContext()).load(post.getImage()).into(holder.ivImage);
+//        Glide.with(holder.itemView.getContext()).load("Image: "+image.getImage()).into(holder.ivImage);
+
     }
 
     @Override

@@ -10,20 +10,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.e_commerceapp.R;
-import com.ram.e_commerceapp.features.ProfileActivity;
-import com.ram.e_commerceapp.features.post.CategoriesActivity;
+
+import com.ram.e_commerceapp.MainActivity;
+import com.ram.e_commerceapp.R;
+import com.ram.e_commerceapp.features.database.DatabaseHelper;
+
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View {
     EditText username;
     EditText password;
     Button loginButton;
   LoginContract.Presenter presenter;
+  DatabaseHelper database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        database = DatabaseHelper.getInstance(this);
         presenter = new LoginPresenter(this);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
@@ -32,35 +36,39 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
            textView.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
+                   Intent intent = new Intent(LoginActivity.this,  SignupActivity.class);
                    startActivity(intent);
                }
            });
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String UserName  = username.getText().toString().trim();
-                String Password = password.getText().toString().trim();
-                presenter.LoginOnclick(UserName,Password);
 
-               Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-               startActivity(intent);
-
-                if (username.getText().toString().equals("") && password.getText().toString().equals("")) {
-                    Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(LoginActivity.this, PostActivity.class);
+        loginButton.setOnClickListener(v -> {
+            String UserName  = username.getText().toString().trim();
+            String Password = password.getText().toString().trim();
+//                presenter.LoginOnclick(UserName,Password);
+//            if (!UserName.isEmpty() && !Password.isEmpty()) {
+//                if(database.userDao().getUserByName(UserName, Password)){
+//                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 //                    startActivity(intent);
-                } else {
-                    Toast.makeText(LoginActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
-                }
+//                } else {
+//                    showInvalidMessage("Invalid username and password.");
+//                }
+//            } else {
+//                showInvalidMessage("The fields is empty!");
+//            }
 
+            if (username.getText().toString().equals("ram pariyar") && password.getText().toString().equals("ram12")) {
 
-
-
+                showSuccessfulMessage("Login Successful");
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            } else {
+                showInvalidMessage("Invalid userName and password");
             }
-        });
 
-    }
+
+    });
+
+}
 
     @Override
     public void showSuccessfulMessage(String SuccessMessage) {

@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.e_commerceapp.R;
+import com.ram.e_commerceapp.R;
 import com.ram.e_commerceapp.features.Login.LoginActivity;
 
 public class IntroActivity extends AppCompatActivity {

@@ -6,4 +6,14 @@
     <string name="tv_desc_second">An e-commerce application is a software platform that enables businesses to sell products and services online through a website or mobile app</string>
     <string name="tv_desc_third">An e-commerce application is a software platform that enables businesses to sell products and services online through a website or mobile app</string>
     <string name="login">Login</string>
+    <string name="Age">Age:20 years</string>
+    <string name="gender_male">Gender: Male</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="id">Id</string>
+    <string name="name_info">Name: Ram Nepali</string>
+    <string name="date_of_birth">Date of Birth: 03/01/2002</string>
+    <string name="religion_hindu">Religion:Hindu</string>
+    <string name="mobile_no">Mobile No: 9803206312</string>
+    <string name="todo">TODO</string>
 </resources>
